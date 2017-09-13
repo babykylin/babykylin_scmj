@@ -1,3 +1,5 @@
+![](http://babykylin.com/bk.png)
+
 幼麟棋牌技术平台 设计说明书
 ====
 
