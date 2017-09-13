@@ -1,5 +1,9 @@
 ![](http://babykylin.com/bk.png)
 
+<center>QQ群：176294790</center>
+
+![](http://babykylin.com/bk_group_qr.jpg)
+
 幼麟棋牌技术平台 设计说明书
 ====
 
