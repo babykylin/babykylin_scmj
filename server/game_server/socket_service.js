@@ -405,6 +405,12 @@ exports.start = function(config,mgr){
 			if(!userId){
 				return;
 			}
+
+			//如果是旧链接断开，则不需要处理。
+			if(userMgr.get(userId) != socket){
+				return;
+			}
+
 			var data = {
 				userid:userId,
 				online:false

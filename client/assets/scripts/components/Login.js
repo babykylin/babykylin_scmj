@@ -77,7 +77,7 @@ cc.Class({
     start:function(){
         var account =  cc.sys.localStorage.getItem("wx_account");
         var sign = cc.sys.localStorage.getItem("wx_sign");
-        if(account != null && sign != null){
+        if(account != null && sign != null && account != '' && sign != ''){
             var ret = {
                 errcode:0,
                 account:account,
