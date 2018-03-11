@@ -7,6 +7,18 @@ function nop(a,b,c,d,e,f,g){
 
 }
   
+function generateUserId() {
+    var Id = "";
+    for (var i = 0; i < 6; ++i) {
+        if (i > 0) {
+            Id += Math.floor(Math.random() * 10);
+        } else {
+            Id += Math.floor(Math.random() * 9) + 1;
+        }
+    }
+    return Id;
+}
+
 function query(sql,callback){  
     pool.getConnection(function(err,conn){  
         if(err){  
@@ -340,8 +352,10 @@ exports.create_user = function(account,name,coins,gems,sex,headimg,callback){
         headimg = 'null';
     }
     name = crypto.toBase64(name);
-    var sql = 'INSERT INTO t_users(account,name,coins,gems,sex,headimg) VALUES("{0}","{1}",{2},{3},{4},{5})';
-    sql = sql.format(account,name,coins,gems,sex,headimg);
+    var userId = generateUserId();
+
+    var sql = 'INSERT INTO t_users(userid,account,name,coins,gems,sex,headimg) VALUES("{0}", "{1}","{2}",{3},{4},{5},{6})';
+    sql = sql.format(userId,account,name,coins,gems,sex,headimg);
     console.log(sql);
     query(sql, function(err, rows, fields) {
         if (err) {

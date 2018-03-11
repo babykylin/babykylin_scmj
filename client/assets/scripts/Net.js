@@ -108,6 +108,9 @@ var Global = cc.Class({
                     data = JSON.stringify(data);
                     //console.log(data);              
                 }
+                if(data == null){
+                    data = '';
+                }
                 this.sio.emit(event,data);                
             }
         },
@@ -134,46 +137,10 @@ var Global = cc.Class({
         },
         
         test:function(fnResult){
-            var xhr = null;
             var fn = function(ret){
-                fnResult(ret.isonline);
-                xhr = null;
+                fnResult(ret.errcode == 0);
             }
-            
-            var arr = this.ip.split(':');
-            var data = {
-                account:cc.vv.userMgr.account,
-                sign:cc.vv.userMgr.sign,
-                ip:arr[0],
-                port:arr[1],
-            }
-            xhr = cc.vv.http.sendRequest("/is_server_online",data,fn);
-            setTimeout(function(){
-                if(xhr){
-                    xhr.abort();
-                    fnResult(false);                    
-                }
-            },1500);
-            /*
-            var opts = {
-                'reconnection':false,
-                'force new connection': true,
-                'transports':['websocket', 'polling']
-            }
-            var self = this;
-            this.testsio = window.io.connect(this.ip,opts);
-            this.testsio.on('connect',function(){
-                console.log('connect');
-                self.testsio.close();
-                self.testsio = null;
-                fnResult(true);
-            });
-            this.testsio.on('connect_error',function(){
-                console.log('connect_failed');
-                self.testsio = null;
-                fnResult(false);
-            });
-            */
+            cc.vv.http.sendRequest("/hi",null,fn,'http://' + this.ip);
         }
     },
 });

@@ -1,12 +1,33 @@
 var crypto = require('../utils/crypto');
 var db = require('../utils/db');
+var express = require('express');
 
 var tokenMgr = require('./tokenmgr');
 var roomMgr = require('./roommgr');
 var userMgr = require('./usermgr');
+var http = require('../utils/http');
 var io = null;
-exports.start = function(config,mgr){
-	io = require('socket.io')(config.CLIENT_PORT);
+
+var app = express();
+
+//设置跨域访问
+app.all('*', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+    res.header("X-Powered-By",' 3.2.1')
+    res.header("Content-Type", "application/json;charset=utf-8");
+	http.send(res,0,"ok",{});
+});
+
+var config = null;
+
+exports.start = function(conf,mgr){
+	config = conf;
+	
+	var httpServer = require('http').createServer(app);
+	io = require('socket.io')(httpServer);
+	httpServer.listen(config.CLIENT_PORT);
 	
 	io.sockets.on('connection',function(socket){
 		socket.on('login',function(data){

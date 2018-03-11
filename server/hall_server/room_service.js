@@ -207,24 +207,6 @@ exports.enterRoom = function(userId,name,roomId,fnCallback){
 	});
 };
 
-exports.isServerOnline = function(ip,port,callback){
-	var id = ip + ":" + port;
-	var serverInfo = serverMap[id];
-	if(!serverInfo){
-		callback(false);
-		return;
-	}
-	var sign = crypto.md5(config.ROOM_PRI_KEY);
-	http.get(serverInfo.ip,serverInfo.httpPort,"/ping",{sign:sign},function(ret,data){
-		if(ret){
-			callback(true);
-		}
-		else{
-			callback(false);
-		}
-	});
-};
-
 exports.start = function($config){
 	config = $config;
 	app.listen(config.ROOM_PORT,config.FOR_ROOM_IP);

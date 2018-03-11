@@ -47,7 +47,7 @@ function getBaseInfo(userid,callback){
         cc.vv.http.sendRequest('/base_info',{userid:userid},function(ret){
             var url = null;
             if(ret.headimgurl){
-               url = ret.headimgurl + ".jpg";
+               url = cc.vv.http.master_url + '/image?url=' + encodeURIComponent(ret.headimgurl) + ".jpg";
             }
             var info = {
                 name:ret.name,
@@ -82,9 +82,6 @@ cc.Class({
     },
     
     setUserID:function(userid){
-        if(cc.sys.isNative == false){
-            return;
-        }
         if(!userid){
             return;
         }

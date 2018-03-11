@@ -296,20 +296,6 @@ app.get('/get_message',function(req,res){
 	});
 });
 
-app.get('/is_server_online',function(req,res){
-	if(!check_account(req,res)){
-		return;
-	}
-	var ip = req.query.ip;
-	var port = req.query.port;
-	room_service.isServerOnline(ip,port,function(isonline){
-		var ret = {
-			isonline:isonline
-		};
-		http.send(res,0,"ok",ret);
-	}); 
-});
-
 exports.start = function($config){
 	config = $config;
 	app.listen(config.CLEINT_PORT);

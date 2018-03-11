@@ -1,3 +1,8 @@
+if(cc.sys.isNative){
+    jsb.reflection.callStaticMethod = function(){
+        
+    }
+}
 cc.Class({
     extends: cc.Component,
 
