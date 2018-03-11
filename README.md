@@ -1,6 +1,6 @@
 ![](http://babykylin.com/bk.png)
 
-![](http://www.babykylin.com/bk_group_qr.jpg)
+![](http://www.babykylin.com/bk_group_qr.jpg)![](http://www.babykylin.com/bk_dy_qr.jpg)
 
 幼麟棋牌技术平台 设计说明书
 ====
@@ -40,7 +40,7 @@
 
 开源社区版本为1.0版本（版本时间2016年12月21日），幼麟内部使用的版本目前是2.x，正在向3.x进发。 功能差别如下
 
-功能 | 社区版本 | 内部版本
+功能 | 社区版本1.0 | 内部版本2.0
 ----|------|----
 H5 | √ | √
 匿名登录 | √ | √
