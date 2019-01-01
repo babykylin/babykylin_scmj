@@ -12,16 +12,12 @@ cc.Class({
         //    readonly: false,    // optional, default is false
         // },
         // ...
-        _reconnect: null,
         _lblTip: null,
-        _loading_image: null,
         _lastPing: 0,
     },
 
     // use this for initialization
     onLoad: function () {
-        this._reconnect = cc.find("Canvas/reconnect");
-        this._loading_image = this._reconnect.getChildByName("loading_image");
         var self = this;
 
         var fnTestServerOn = function () {
@@ -48,21 +44,18 @@ cc.Class({
 
         var fn = function (data) {
             self.node.off('disconnect', fn);
-            self._reconnect.active = true;
+            cc.vv.wc.show("正在重连...");
             fnTestServerOn();
         };
         console.log("adasfdasdfsdf");
 
         this.node.on('login_finished', function () {
-            self._reconnect.active = false;
+            cc.vv.wc.hide();
             self.node.on('disconnect', fn);
         });
         this.node.on('disconnect', fn);
     },
     // called every frame, uncomment this function to activate update callback
     update: function (dt) {
-        if (this._reconnect.active) {
-            this._loading_image.rotation = this._loading_image.rotation - dt * 45;
-        }
     },
 });

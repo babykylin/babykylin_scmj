@@ -11,11 +11,7 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
-        if(!cc.sys.isNative && cc.sys.isMobile){
-            var cvs = this.node.getComponent(cc.Canvas);
-            cvs.fitHeight = true;
-            cvs.fitWidth = true;
-        }
+        cc.vv.utils.setFitSreenMode();
         this.tipLabel.string = this._stateStr;
         this.startPreloading();
     },
@@ -25,23 +21,23 @@ cc.Class({
         this._isLoading = true;
         var self = this;
         
-        cc.loader.onProgress = function ( completedCount, totalCount,  item ){
+        var onProgress = function ( completedCount, totalCount,  item ){
             //console.log("completedCount:" + completedCount + ",totalCount:" + totalCount );
             if(self._isLoading){
                 self._progress = completedCount/totalCount;
             }
         };
         
-        cc.loader.loadResAll("textures", function (err, assets) {
-            self.onLoadComplete();
-        });      
+        //cc.loader.loadResDir("textures",cc.Texture2D, onProgress,function (err, assets) {
+        //    self.onLoadComplete();
+        //});
+        self.onLoadComplete();      
     },
     
     onLoadComplete:function(){
         this._isLoading = false;
         this._stateStr = "准备登陆";
         cc.director.loadScene("login");
-        cc.loader.onComplete = null;
     },
 
     // called every frame, uncomment this function to activate update callback

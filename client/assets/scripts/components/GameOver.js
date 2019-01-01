@@ -70,7 +70,7 @@ cc.Class({
         
         //初始化网络事件监听器
         var self = this;
-        this.node.on('game_over',function(data){self.onGameOver(data.detail);});
+        this.node.on('game_over',function(data){self.onGameOver(data);});
         
         this.node.on('game_end',function(data){self._isGameEnd = true;});
     },

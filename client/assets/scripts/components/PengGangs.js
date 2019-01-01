@@ -22,7 +22,8 @@ cc.Class({
         var gameChild = this.node.getChildByName("game");
         var myself = gameChild.getChildByName("myself");
         var pengangroot = myself.getChildByName("penggangs");
-        var realwidth = cc.director.getVisibleSize().width;
+        var cvs = cc.find('Canvas');
+        var realwidth = cvs.width;
         var scale = realwidth / 1280;
         pengangroot.scaleX *= scale;
         pengangroot.scaleY *= scale;
@@ -30,15 +31,11 @@ cc.Class({
         var self = this;
         this.node.on('peng_notify',function(data){
             //刷新所有的牌
-            //console.log(data.detail);
-            var data = data.detail;
             self.onPengGangChanged(data);
         });
         
         this.node.on('gang_notify',function(data){
             //刷新所有的牌
-            //console.log(data.detail);
-            var data = data.detail;
             self.onPengGangChanged(data.seatData);
         });
         

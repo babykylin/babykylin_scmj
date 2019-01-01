@@ -41,7 +41,7 @@ cc.Class({
         
         //初始化网络事件监听器
         var self = this;
-        this.node.on('game_end',function(data){self.onGameEnd(data.detail);});
+        this.node.on('game_end',function(data){self.onGameEnd(data);});
     },
     
     showResult:function(seat,info,isZuiJiaPaoShou){

@@ -25,15 +25,7 @@ cc.Class({
     },
     
     onLoad: function () {
-        if(!cc.sys.isNative && cc.sys.isMobile){
-            var cvs = this.node.getComponent(cc.Canvas);
-            cvs.fitHeight = true;
-            cvs.fitWidth = true;
-        }
-        if(!cc.vv){
-            cc.director.loadScene("loading");
-            return;
-        }
+        cc.vv.utils.setFitSreenMode();
         this.addComponent("NoticeTip");
         this.addComponent("GameOver");
         this.addComponent("DingQue");
@@ -85,9 +77,9 @@ cc.Class({
             this.initDragStuffs(sprite.node);
         }
         
-        var realwidth = cc.director.getVisibleSize().width;
-        myholds.scaleX *= realwidth/1280;
-        myholds.scaleY *= realwidth/1280;  
+        //var realwidth = this.node.width;
+        //myholds.scaleX *= realwidth/1280;
+        //myholds.scaleY *= realwidth/1280;  
         
         var sides = ["myself","right","up","left"];
         for(var i = 0; i < sides.length; ++i){
@@ -161,8 +153,8 @@ cc.Class({
             node.opacity = 255;
             this._chupaidrag.active = false;
             this._chupaidrag.getComponent(cc.Sprite).spriteFrame = node.getComponent(cc.Sprite).spriteFrame;
-            this._chupaidrag.x = event.getLocationX() - cc.director.getVisibleSize().width / 2;
-            this._chupaidrag.y = event.getLocationY() - cc.director.getVisibleSize().height / 2;
+            this._chupaidrag.x = event.getLocationX() - this.node.width / 2;
+            this._chupaidrag.y = event.getLocationY() - this.node.height / 2;
         }.bind(this));
 
         node.on(cc.Node.EventType.TOUCH_MOVE, function (event) {
@@ -181,8 +173,8 @@ cc.Class({
             this._chupaidrag.opacity = 255;
             this._chupaidrag.scaleX = 1;
             this._chupaidrag.scaleY = 1;
-            this._chupaidrag.x = event.getLocationX() - cc.director.getVisibleSize().width / 2;
-            this._chupaidrag.y = event.getLocationY() - cc.director.getVisibleSize().height / 2;
+            this._chupaidrag.x = event.getLocationX() - this.width / 2;
+            this._chupaidrag.y = event.getLocationY() - this.height / 2;
             node.y = 0;
         }.bind(this));
 
@@ -255,7 +247,6 @@ cc.Class({
         });
         
         this.node.on('game_chupai',function(data){
-            data = data.detail;
             self.hideChupai();
             self.checkQueYiMen();
             if(data.last != cc.vv.gameNetMgr.seatIndex){
@@ -268,7 +259,6 @@ cc.Class({
         
         this.node.on('game_mopai',function(data){
             self.hideChupai();
-            data = data.detail;
             var pai = data.pai;
             var localIndex = cc.vv.gameNetMgr.getLocalIndex(data.seatIndex);
             if(localIndex == 0){
@@ -283,11 +273,10 @@ cc.Class({
         });
         
         this.node.on('game_action',function(data){
-            self.showAction(data.detail);
+            self.showAction(data);
         });
         
         this.node.on('hupai',function(data){
-            var data = data.detail;
             //如果不是玩家自己，则将玩家的牌都放倒
             var seatIndex = data.seatindex;
             var localIndex = cc.vv.gameNetMgr.getLocalIndex(seatIndex);
@@ -358,7 +347,7 @@ cc.Class({
         
         this.node.on('game_chupai_notify',function(data){
             self.hideChupai();
-            var seatData = data.detail.seatData;
+            var seatData = data.seatData;
             //如果是自己，则刷新手牌
             if(seatData.seatindex == cc.vv.gameNetMgr.seatIndex){
                 self.initMahjongs();                
@@ -367,14 +356,14 @@ cc.Class({
                 self.initOtherMahjongs(seatData);
             }
             self.showChupai();
-            var audioUrl = cc.vv.mahjongmgr.getAudioURLByMJID(data.detail.pai);
+            var audioUrl = cc.vv.mahjongmgr.getAudioURLByMJID(data.pai);
             cc.vv.audioMgr.playSFX(audioUrl);
         });
         
         this.node.on('guo_notify',function(data){
             self.hideChupai();
             self.hideOptions();
-            var seatData = data.detail;
+            var seatData = data;
             //如果是自己，则刷新手牌
             if(seatData.seatindex == cc.vv.gameNetMgr.seatIndex){
                 self.initMahjongs();                
@@ -393,7 +382,7 @@ cc.Class({
         this.node.on('peng_notify',function(data){    
             self.hideChupai();
             
-            var seatData = data.detail;
+            var seatData = data;
             if(seatData.seatindex == cc.vv.gameNetMgr.seatIndex){
                 self.initMahjongs();                
             }
@@ -408,7 +397,6 @@ cc.Class({
         
         this.node.on('gang_notify',function(data){
             self.hideChupai();
-            var data = data.detail;
             var seatData = data.seatData;
             var gangtype = data.gangtype;
             if(seatData.seatindex == cc.vv.gameNetMgr.seatIndex){
@@ -430,7 +418,6 @@ cc.Class({
         });
         
         this.node.on("hangang_notify",function(data){
-            var data = data.detail;
             var localIndex = self.getLocalIndex(data);
             self.playEfx(localIndex,"play_gang");
             cc.vv.audioMgr.playSFX("nv/gang.mp3");

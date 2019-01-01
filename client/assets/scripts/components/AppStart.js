@@ -83,21 +83,12 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
-        if(!cc.sys.isNative && cc.sys.isMobile){
-            var cvs = this.node.getComponent(cc.Canvas);
-            cvs.fitHeight = true;
-            cvs.fitWidth = true;
-        }
         initMgr();
+        cc.vv.utils.setFitSreenMode();
         console.log('haha'); 
         this._mainScene = 'loading';
         this.showSplash(function(){
-            var url = cc.url.raw('resources/ver/cv.txt');
-            cc.loader.load(url,function(err,data){
-                cc.VERSION = data;
-                console.log('current core version:' + cc.VERSION);
-                this.getServerInfo();
-            }.bind(this));
+            this.getServerInfo();
         }.bind(this));
     },
 
@@ -145,17 +136,26 @@ cc.Class({
     getServerInfo:function(){
         var self = this;
         var onGetVersion = function(ret){
-            if(ret.version == null){
-                console.log("error.");
+            cc.vv.SI = ret;
+            if(cc.sys.isNative){
+                var url = cc.url.raw('resources/ver/cv.txt');
+                cc.loader.load(url,function(err,data){
+                    cc.VERSION = data;
+                    if(ret.version == null){
+                        console.log("error.");
+                    }
+                    else{
+                        if(cc.vv.SI.version != cc.VERSION){
+                            cc.find("Canvas/alert").active = true;
+                        }
+                        else{
+                            cc.director.loadScene(self._mainScene);
+                        }
+                    }
+                }.bind(this));
             }
             else{
-                cc.vv.SI = ret;
-                if(ret.version != cc.VERSION){
-                    cc.find("Canvas/alert").active = true;
-                }
-                else{
-                    cc.director.loadScene(self._mainScene);
-                }
+                cc.director.loadScene(self._mainScene);
             }
         };
         

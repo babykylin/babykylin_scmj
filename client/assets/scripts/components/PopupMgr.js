@@ -42,8 +42,7 @@ cc.Class({
         this.addBtnHandler("dissolve_notice/btn_ok");
         
         var self = this;
-        this.node.on("dissolve_notice",function(event){
-            var data = event.detail;
+        this.node.on("dissolve_notice",function(data){
             self.showDissolveNotice(data);
         });
         

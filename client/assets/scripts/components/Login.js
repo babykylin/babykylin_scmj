@@ -44,16 +44,7 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
-        if(!cc.sys.isNative && cc.sys.isMobile){
-            var cvs = this.node.getComponent(cc.Canvas);
-            cvs.fitHeight = true;
-            cvs.fitWidth = true;
-        }
-        
-        if(!cc.vv){
-            cc.director.loadScene("loading");
-            return;
-        }
+        cc.vv.utils.setFitSreenMode();
         cc.vv.http.url = cc.vv.http.master_url;
         cc.vv.net.addHandler('push_need_create_role',function(){
             console.log("onLoad:push_need_create_role");

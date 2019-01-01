@@ -26,7 +26,6 @@ cc.Class({
         
         var self = this;
         this.node.on('push_notice',function(data){
-            var data = data.detail;
             self._guohu.active = true;
             self._guohuTime = data.time;
             self._info.string = data.info;

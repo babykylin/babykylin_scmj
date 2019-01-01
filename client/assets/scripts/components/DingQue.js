@@ -59,7 +59,7 @@ cc.Class({
         });
         
         this.node.on('game_dingque_notify',function(data){
-            var seatIndex = cc.vv.gameNetMgr.getSeatIndexByID(data.detail);
+            var seatIndex = cc.vv.gameNetMgr.getSeatIndexByID(data);
             var localIndex = cc.vv.gameNetMgr.getLocalIndex(seatIndex);
             console.log("game_dingque_notify:" + localIndex);
             self.tips[localIndex].node.active = true;
