@@ -38,7 +38,7 @@
 - Windows 32位：https://nodejs.org/dist/latest-v6.x/node-v6.16.0-x86.msi  
 - Mac：https://nodejs.org/dist/latest-v6.x/node-v6.16.0.pkg  
 
-开源协议:<https://github.com/babykylin/babykylin_scmj.wiki.git>
+开源协议:<https://github.com/babykylin/babykylin_scmj/wiki/开源协议>
 
 在线教程
 ---
