@@ -38,6 +38,7 @@
 - Windows 32位：https://nodejs.org/dist/latest-v6.x/node-v6.16.0-x86.msi  
 - Mac：https://nodejs.org/dist/latest-v6.x/node-v6.16.0.pkg  
 
+开源协议:<https://github.com/babykylin/babykylin_scmj.wiki.git>
 
 在线教程
 ---
@@ -45,7 +46,7 @@
 - [Cocos官方直播]幼麟棋牌-Cocos地方棋牌源码讲解 腾讯视频：https://v.qq.com/x/page/r03921a48jy.html  
 - [Cocos官方直播]幼麟棋牌-服务端、客户端网络通信 腾讯视频：https://v.qq.com/x/page/o0522mo58vj.html  
 
-
+   
 ![](http://babykylin.com/bk.png)
 
 幼麟游戏 让你的棋牌开发、运营更简单
