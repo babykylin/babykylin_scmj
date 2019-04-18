@@ -1,8 +1,20 @@
-幼麟棋牌-四川麻将v1.0 开源版本  已支持数百个在线产品，可放心使用
+# >>>>COCOS Creator官方合作直播教学案例<<<<< 
 
-交流QQ群：176294790
+## 幼麟棋牌-四川麻将v1.0 开源版本  已支持数百个在线产品，可放心使用 
 
-棋牌定制业务 联系方式 麒麟子 QQ:738337822 微信：18081177883 
+## 交流QQ群：176294790 
+
+## 棋牌定制业务 联系方式 麒麟子 QQ:738337822 微信：18081177883 
+
+Coocos官方直播教程
+---
+- [Cocos官方直播]幼麟棋牌-Cocos地方棋牌源码讲解 腾讯视频：https://v.qq.com/x/page/r03921a48jy.html  
+- [Cocos官方直播]幼麟棋牌-服务端、客户端网络通信 腾讯视频：https://v.qq.com/x/page/o0522mo58vj.html 
+
+### 为了照顾国内用户，github与gitee同步更新 
+
+gitee地址 https://gitee.com/qilinzi/babykylin_scmj 
+
 
 **开发环境**
 ---
@@ -45,13 +57,6 @@
 - Mac：https://nodejs.org/dist/latest-v6.x/node-v6.16.0.pkg  
 
 开源协议:<https://github.com/babykylin/babykylin_scmj/wiki/开源协议>
-
-在线教程
----
-- [博毅创为大学堂]幼麟棋牌-达达麻将教程  腾讯课堂：https://ke.qq.com/course/97604  
-- [Cocos官方直播]幼麟棋牌-Cocos地方棋牌源码讲解 腾讯视频：https://v.qq.com/x/page/r03921a48jy.html  
-- [Cocos官方直播]幼麟棋牌-服务端、客户端网络通信 腾讯视频：https://v.qq.com/x/page/o0522mo58vj.html  
-
    
 ![](http://babykylin.com/bk.png)
 
