@@ -1,19 +1,25 @@
-# >>>>COCOS Creator官方合作直播教学案例<<<<< 
+<div align='center'>
+    <img src=https://blogassets.oss-cn-shenzhen.aliyuncs.com/logo_hor.png>
+    </img>
+    <p>成都幼麟游戏有限公司出品</p>
+</div>
 
-## 幼麟棋牌-四川麻将v1.0 开源版本  已支持数百个在线产品，可放心使用 
+
+
+# >>>>Cocos Creator引擎官方合作直播教学案例<<<<< 
+
+## 幼麟棋牌-四川麻将v1.0 开源版本  已支持数百个在线运营产品，可放心使用 
 
 ## 交流QQ群：176294790 
 
 ## 棋牌定制业务 联系方式 麒麟子 QQ:738337822 微信：18081177883 
 
+### 如果要捐款表示支持的，1元表示心意即可，捐款是次要的，来群里帮忙热闹场子才是关键
+
 Coocos官方直播教程
 ---
 - [Cocos官方直播]幼麟棋牌-Cocos地方棋牌源码讲解 腾讯视频：https://v.qq.com/x/page/r03921a48jy.html  
-- [Cocos官方直播]幼麟棋牌-服务端、客户端网络通信 腾讯视频：https://v.qq.com/x/page/o0522mo58vj.html 
-
-### 为了照顾国内用户，github与gitee同步更新 
-
-gitee地址 https://gitee.com/qilinzi/babykylin_scmj 
+- [Cocos官方直播]幼麟棋牌-服务端、客户端网络通信 腾讯视频：https://v.qq.com/x/page/o0522mo58vj.html  
 
 
 **开发环境**
@@ -57,8 +63,9 @@ gitee地址 https://gitee.com/qilinzi/babykylin_scmj
 - Mac：https://nodejs.org/dist/latest-v6.x/node-v6.16.0.pkg  
 
 开源协议:<https://github.com/babykylin/babykylin_scmj/wiki/开源协议>
+
    
-![](http://babykylin.com/bk.png)
+![](https://images.gitee.com/uploads/images/2019/0418/000838_d6c4b9ca_1609936.png)
 
 幼麟游戏 让你的棋牌开发、运营更简单
 ---
@@ -106,6 +113,19 @@ gitee地址 https://gitee.com/qilinzi/babykylin_scmj
   
 - 自建语音聊天系统  
  幼麟游戏自主研发语音聊天系统，即轻便又实用。同时避免了额外的语音SDK费用。
+
+<div align='center'>
+    <p>幼麟棋牌5.0 案例欣赏</p>
+    <img src=https://blogassets.oss-cn-shenzhen.aliyuncs.com/mlpcj1.jpg>
+    <img src=https://blogassets.oss-cn-shenzhen.aliyuncs.com/mlpcj2.jpg>
+    <img src=https://blogassets.oss-cn-shenzhen.aliyuncs.com/mlpcj3.jpg>
+    <img src=https://blogassets.oss-cn-shenzhen.aliyuncs.com/mlpcj4.jpg>
+    <img src=https://blogassets.oss-cn-shenzhen.aliyuncs.com/mlpcj5.jpg>
+    <img src=https://blogassets.oss-cn-shenzhen.aliyuncs.com/mlpcj6.jpg>
+    <img src=https://blogassets.oss-cn-shenzhen.aliyuncs.com/mlpcj7.jpg>
+    </img>
+</div>
+
  
  ----
  成都幼麟科技有限公司 联系方式 麒麟子 QQ:738337822 微信：18081177883
