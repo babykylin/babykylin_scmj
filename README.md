@@ -18,8 +18,8 @@
 
 Github与Gitee同步更新 
 --
-- Github地址: https://github.com/babykylin/babykylin_scmj 
-- Gitee地址: https://gitee.com/qilinzi/babykylin_scmj 
+- GitHub地址: https://github.com/babykylin/babykylin_scmj 
+- GitEE地址: https://gitee.com/qilinzi/babykylin_scmj 
 
 
 Coocos官方直播教程
@@ -121,7 +121,7 @@ Coocos官方直播教程
  幼麟游戏自主研发语音聊天系统，即轻便又实用。同时避免了额外的语音SDK费用。
 
 <div align='center'>
-    <p>幼麟棋牌5.0 案例欣赏</p>
+    <p>幼麟棋牌5.0 案例截图</p>
     <img src=https://blogassets.oss-cn-shenzhen.aliyuncs.com/mlpcj1.jpg>
     <img src=https://blogassets.oss-cn-shenzhen.aliyuncs.com/mlpcj2.jpg>
     <img src=https://blogassets.oss-cn-shenzhen.aliyuncs.com/mlpcj3.jpg>
