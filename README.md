@@ -14,7 +14,13 @@
 
 ## 棋牌定制业务 联系方式 麒麟子 QQ:738337822 微信：18081177883 
 
-### 如果要捐款表示支持的，1元表示心意即可，捐款是次要的，来群里帮忙热闹场子才是关键
+### 如果要捐款表示支持的，1元表示心意即可，捐款是次要的，来群里帮忙热闹场子才是关键（仅码云支持捐款）
+
+Github与Gitee同步更新 
+--
+- Github地址: https://github.com/babykylin/babykylin_scmj 
+- Gitee地址: https://gitee.com/qilinzi/babykylin_scmj 
+
 
 Coocos官方直播教程
 ---
