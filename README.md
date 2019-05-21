@@ -22,6 +22,10 @@ Github与Gitee同步更新
 - GitHub地址: https://github.com/babykylin/babykylin_scmj 
 - GitEE地址: https://gitee.com/qilinzi/babykylin_scmj 
 
+麒麟子博客 
+--
+https://qilinzi.blog.csdn.net/
+
 
 Coocos官方直播教程
 ---
